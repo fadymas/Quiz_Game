@@ -1,0 +1,262 @@
+:root {
+    --main-color: #E86B35;
+    --second-color: #F6EFE5;
+    --second-border: #E2DFC3;
+    --correct-color: #E7FFF1;
+    --correct-back: #39A665;
+    --correct-border: #BDE6CB;
+    --false-color: #C64451;
+    --false-back: #FFEFEF;
+    --false-border: #F3C3C4;
+    --progress-color: #EB6639;
+    --paragraph-color: #676568;
+    --white-color: white;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-semibold {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
+body {
+    height: 100vh;
+    background-color: var(--second-color);
+    display: grid;
+    place-content: center;
+
+}
+
+.container {
+    display: flex;
+    width: 20rem;
+    max-width: calc(100vw);
+    max-height: 100vh;
+    padding: 1.5rem 2.8125rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 1.25rem;
+    background: var(--white-color);
+    justify-content: center;
+
+}
+
+.startGame__h1--start {
+    color: var(--main-color);
+    font-size: 2.25rem;
+    max-width: 100%;
+}
+
+p {
+    color: var(--paragraph-color);
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    max-width: 100%;
+    /* 162.5% */
+}
+
+
+.btn {
+    display: flex;
+    width: 18.4375rem;
+    height: 3.5rem;
+    padding: 0.8125rem 6.4375rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    background: var(--main-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+}
+
+/* result page */
+.resultGame {
+    display: none;
+    width: 20rem;
+    padding: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.resultGame__h1--start {
+    font-size: 2.1rem;
+    line-height: 2.7rem;
+    color: var(--main-color);
+}
+
+.resultGame__resultsBox {
+    display: flex;
+    width: 18rem;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    border-radius: 0.75rem;
+    background-color: var(--second-color);
+}
+
+.resultGame__resultsBox p {
+    align-self: stretch;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+    color: black;
+}
+
+.resultGame__resultsBox h2 {
+    align-self: stretch;
+    color: var(--main-color);
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+}
+
+.resultGame__button--start.btn {
+    width: 10rem;
+    height: 4rem;
+    padding: 0.5rem 2rem;
+
+}
+
+/* result page */
+
+/* questions page */
+.question.container {
+    padding: 1.3rem;
+    gap: 1.3rem;
+    display: none;
+}
+
+.question__h1--start {
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+}
+
+.question-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    font-size: 0.8rem;
+}
+
+.question-data__score,
+.question-data__number {
+    line-height: 1.2rem;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    align-self: stretch;
+}
+
+.answer {
+    display: flex;
+    height: 2.8rem;
+    padding: 0.8rem;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 0.5rem;
+    border: 1px solid var(--second-border);
+    background: var(--second-color);
+    color: black;
+    cursor: pointer;
+    transition: 200ms linear;
+}
+
+.answer:hover {
+    filter: invert(5%);
+
+}
+
+.answer.answer--right {
+    background-color: var(--correct-back);
+    color: var(--correct-color);
+    border-color: var(--correct-border);
+}
+
+.answer.answer--false {
+    background-color: var(--false-back);
+    color: var(--false-color);
+    border-color: var(--false-border);
+}
+
+input[type="range"] {
+    display: flex;
+    height: 0.5rem;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 0.25rem;
+    appearance: none;
+    background-color: var(--second-color);
+    border: 1px solid var(--second-border);
+    position: relative;
+
+}
+
+.qurstion__progressbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.4rem;
+    width: 10%;
+    overflow: hidden;
+    background-color: var(--main-color);
+    border-radius: 0.25rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    visibility: hidden;
+    appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+    visibility: hidden;
+}
+
+input[type="range"]::-ms-thumb {
+    visibility: hidden;
+}
+
+
+
+/* questions page */

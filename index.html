@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/imgs/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>QuizSpark</title>
+  </head>
+  <body>
+    <main>
+      <section class="startGame container">
+        <h1 class="startGame__h1--start roboto-bold">Quiz Time!</h1>
+        <p class="roboto-regular">
+          Test your knowledge with these fun questions
+        </p>
+        <button class="roboto-medium btn startGame__button">Start Quiz</button>
+      </section>
+      <section class="question container">
+        <h1 class="question__h1--start roboto-semibold">
+          What is the capital of France?
+        </h1>
+        <div class="roboto-medium question-data">
+          <p class="question-data__number">Question 1 of 5</p>
+          <p class="question-data__score">Score: 0</p>
+        </div>
+        <div class="answers-container roboto-medium">
+          <p class="answer">London</p>
+          <p class="answer">Paris</p>
+          <p class="answer">Berlin</p>
+          <p class="answer">Madrid</p>
+        </div>
+        <input
+          class="qurstion__progressbar"
+          type="range"
+          value="2"
+          min="0"
+          max="5"
+        />
+      </section>
+      <section class="resultGame container">
+        <h1 class="resultGame__h1--start roboto-bold">Quiz Results</h1>
+        <div class="resultGame__resultsBox">
+          <p class="roboto-medium resultBox__user-score">You scored 3 out of 5</p>
+          <h2 class="roboto-semibold resultBox__message">Good effort! Keep learning!</h2>
+        </div>
+
+        <button class="roboto-medium btn resultGame__button--startAgain">
+          Restart Quiz
+        </button>
+      </section>
+    </main>
+    <script src="js/master.js"></script>
+  </body>
+</html>
