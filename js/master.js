@@ -88,7 +88,7 @@ nextSection(startGameButton, startGameSection, questionSection);
 // Question Section
 async function fetchQuestions() {
     try {
-        const response = await fetch("https://opentdb.com/api.php?amount=5&type=multiple");
+        const response = await fetch("https://opentdb.com/api.php?amount=5&category=27&type=multiple");
         if (!response.ok) throw new Error("Failed to fetch questions");
         const data = await response.json();
         questionsGenerator = getQuestion(data.results);
