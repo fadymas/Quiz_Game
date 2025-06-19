@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/imgs/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/assets//imgs/favicon.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/master.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,32 +28,28 @@
         <button class="roboto-medium btn startGame__button">Start Quiz</button>
       </section>
       <section class="question container">
-        <h1 class="question__h1--start roboto-semibold">
-          What is the capital of France?
-        </h1>
+        <h1 class="question__h1--start roboto-semibold"></h1>
         <div class="roboto-medium question-data">
           <p class="question-data__number">Question 1 of 5</p>
           <p class="question-data__score">Score: 0</p>
         </div>
-        <div class="answers-container roboto-medium">
-          <p class="answer">London</p>
-          <p class="answer">Paris</p>
-          <p class="answer">Berlin</p>
-          <p class="answer">Madrid</p>
-        </div>
+        <div class="answers-container roboto-medium"></div>
         <input
-          class="qurstion__progressbar"
+          class="question__progressbar"
           type="range"
           value="2"
           min="0"
           max="5"
+          tabindex="-1"
         />
       </section>
       <section class="resultGame container">
         <h1 class="resultGame__h1--start roboto-bold">Quiz Results</h1>
         <div class="resultGame__resultsBox">
-          <p class="roboto-medium resultBox__user-score">You scored 3 out of 5</p>
-          <h2 class="roboto-semibold resultBox__message">Good effort! Keep learning!</h2>
+          <p class="roboto-medium resultBox__user-answers">
+            You answered 3 out of 5
+          </p>
+          <h2 class="roboto-semibold resultBox__user-score"></h2>
         </div>
 
         <button class="roboto-medium btn resultGame__button--startAgain">
@@ -57,6 +57,22 @@
         </button>
       </section>
     </main>
+    <audio
+      id="correct-sound"
+      src="assets/audio/correct.mp3"
+      preload="auto"
+    ></audio>
+    <audio
+      id="incorrect-sound"
+      src="assets/audio/incorrect.mp3"
+      preload="auto"
+    ></audio>
+    <audio
+      id="finish-sound"
+      src="assets/audio/finishSound.mp3"
+      preload="auto"
+    ></audio>
+
     <script src="js/master.js"></script>
   </body>
 </html>

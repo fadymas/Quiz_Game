@@ -2,8 +2,8 @@
     --main-color: #E86B35;
     --second-color: #F6EFE5;
     --second-border: #E2DFC3;
-    --correct-color: #E7FFF1;
-    --correct-back: #39A665;
+    --correct-back: #E7FFF1;
+    --correct-color: #39A665;
     --correct-border: #BDE6CB;
     --false-color: #C64451;
     --false-back: #FFEFEF;
@@ -11,6 +11,7 @@
     --progress-color: #EB6639;
     --paragraph-color: #676568;
     --white-color: white;
+    --bar-width: 20%;
 }
 
 .roboto-regular {
@@ -78,7 +79,6 @@ p {
     font-size: 1rem;
     line-height: 1.625rem;
     max-width: 100%;
-    /* 162.5% */
 }
 
 
@@ -96,6 +96,13 @@ p {
     color: var(--white-color);
     border: none;
     cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+    backdrop-filter: invert(10%)
 }
 
 /* result page */
@@ -163,7 +170,8 @@ p {
     color: #000;
     text-align: center;
     line-height: 1.8rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    text-wrap: balance;
 }
 
 .question-data {
@@ -189,8 +197,8 @@ p {
 
 .answer {
     display: flex;
-    height: 2.8rem;
-    padding: 0.8rem;
+    padding-inline: 0.8rem;
+    padding-block: 1rem;
     align-items: center;
     align-self: stretch;
     border-radius: 0.5rem;
@@ -198,12 +206,17 @@ p {
     background: var(--second-color);
     color: black;
     cursor: pointer;
-    transition: 200ms linear;
+    transition: 100ms ease-in-out;
 }
 
 .answer:hover {
     filter: invert(5%);
+    transform: scale(1.07);
 
+}
+
+.answer.answer--active {
+    transform: scale(1.07);
 }
 
 .answer.answer--right {
@@ -231,14 +244,14 @@ input[type="range"] {
 
 }
 
-.qurstion__progressbar::after {
+.question__progressbar::after {
     content: "";
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     height: 0.4rem;
-    width: 10%;
+    width: var(--bar-width);
     overflow: hidden;
     background-color: var(--main-color);
     border-radius: 0.25rem;
