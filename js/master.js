@@ -135,6 +135,7 @@ function updateAnswers(question) {
     for (const answer of allAnswers) {
         let p = document.createElement("p");
         p.innerHTML = answer;
+        p.dataset.answer = answer;
         p.setAttribute("role", "button")
         p.setAttribute("tabindex", "0")
         p.classList.add("answer");
@@ -148,14 +149,16 @@ function updateAnswers(question) {
 
 function answerEvent(question, e) {
     const p = e.target;
+    const selectedAnswer = p.dataset.answer;
     p.classList.add("answer--active");
 
     soundManagement({ p: p, question: question })
 
     answersContainer.querySelectorAll(".answer:not(.answer--false):not(.answer--right)").forEach((e) => {
-        if (e.innerText === question.correct_answer) {
+        const eAnswer = e.dataset.answer;
+        if (eAnswer === question.correct_answer) {
             e.classList.add("answer--right");
-            p.innerText == e.innerText ? quiz.score += 5 : null;
+            selectedAnswer == eAnswer ? quiz.score += 5 : null;
 
         } else {
             e.classList.add("answer--false");
