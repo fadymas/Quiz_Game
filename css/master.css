@@ -579,7 +579,6 @@ input[type="range"]::-ms-thumb {
 
     .resultGame__resultsBox {
         height: 12.75rem;
-        padding: 2.125rem 8.625rem;
         gap: 1.9375rem;
         border-radius: 0.9375rem;
     }
