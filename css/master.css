@@ -46,9 +46,11 @@
 
 body {
     height: 100vh;
-    background-color: var(--second-color);
-    display: grid;
-    place-content: center;
+    background: url("../assets/imgs/output.jpg") no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0
 }
 
@@ -484,6 +486,10 @@ input[type="range"]::-ms-thumb {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    body{
+        background: url("../assets/imgs/full.jpg")  no-repeat;
+        background-size: cover;
+    }
     .container {
         width: 45rem;
         padding: 3.5rem 5rem;
