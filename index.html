@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
     <link rel="stylesheet" href="css/master.css" />
 
     <title>QuizSpark</title>
@@ -21,7 +22,7 @@
   <body>
     <main>
       <section class="startGame container">
-        <h1 class="startGame__h1--start roboto-bold">وقت الاختبار!</h1>
+        <h1 class="startGame__h1--start roboto-bold">!وقت الاختبار</h1>
         <p class="roboto-regular">اختبر معرفتك في آيات الكتاب المقدس</p>
         <button class="roboto-medium btn startGame__button">
           ابدأ الاختبار
@@ -37,9 +38,9 @@
         <input
           class="question__progressbar"
           type="range"
-          value="2"
+          value="0"
           min="0"
-          max="5"
+          max="21"
           tabindex="-1"
         />
       </section>
@@ -53,7 +54,7 @@
         </div>
 
         <button class="roboto-medium btn resultGame__button--startAgain">
-أعد المحاولة
+          أعد المحاولة
         </button>
       </section>
     </main>
