@@ -15,28 +15,28 @@
 }
 
 .roboto-regular {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans Arabic", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
 .roboto-medium {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans Arabic", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
 }
 
 .roboto-bold {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans Arabic", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
 }
 
 .roboto-semibold {
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto Sans Arabic", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
@@ -70,8 +70,14 @@ body {
 
 .startGame__h1--start {
     color: var(--main-color);
-    font-size: 2.25rem;
+    font-size: 3.3rem;
     max-width: 100%;
+    margin: 0;
+}
+
+.startGame p {
+    font-size: 1.4rem;
+    line-height: 1.4;
 }
 
 p {
@@ -80,6 +86,7 @@ p {
     font-size: 1rem;
     line-height: 1.625rem;
     max-width: 100%;
+    margin: 0;
 }
 
 
@@ -99,6 +106,7 @@ p {
     border: none;
     cursor: pointer;
     transition: 200ms ease-in-out;
+    font-size: 1.5rem;
 }
 
 .btn:hover {
@@ -114,7 +122,7 @@ p {
     padding: 1.2rem;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
 }
 
@@ -173,7 +181,7 @@ p {
     align-self: stretch;
     color: #000;
     text-align: center;
-    line-height: 1.8rem;
+    line-height: 2.5rem;
     font-size: 1.2rem;
     text-wrap: balance;
 }
@@ -211,6 +219,11 @@ p {
     color: black;
     cursor: pointer;
     transition: 100ms ease-in-out;
+    direction: rtl;
+}
+
+p.answer {
+    margin: 0;
 }
 
 .answer:hover {
@@ -317,7 +330,11 @@ input[type="range"]::-ms-thumb {
     }
 
     .startGame__h1--start {
-        font-size: 3rem;
+        font-size: 4rem;
+    }
+
+    .startGame p {
+        font-size: 2rem;
     }
 
     p {
@@ -475,7 +492,7 @@ input[type="range"]::-ms-thumb {
     }
 
     .startGame__h1--start {
-        font-size: 4rem;
+        font-size: 6rem;
     }
 
     p {
@@ -550,14 +567,18 @@ input[type="range"]::-ms-thumb {
     .container {
         width: 69.1875rem;
         /* height: 29.8125rem; */
-        padding: 3.8125rem 10.75rem;
-        gap: 3.5rem;
+        padding: 2.8125rem 10.75rem;
+        gap: 2rem;
         border-radius: 1.9375rem;
     }
 
     .startGame__h1--start {
-        font-size: 5rem;
+        font-size: 10rem;
     }
+
+    .startGame p {
+        font-size: 4.8rem;}
+    
 
     p {
         font-size: 2.25rem;
@@ -588,7 +609,7 @@ input[type="range"]::-ms-thumb {
     }
 
     .resultGame__resultsBox h2 {
-        font-size: 2.875rem;
+        font-size: 3.875rem;
     }
 
     .resultGame__button--startAgain {

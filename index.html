@@ -8,25 +8,24 @@
       href="assets/imgs/favicon.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/master.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    
+    <link rel="stylesheet" href="css/master.css" />
+
     <title>QuizSpark</title>
   </head>
   <body>
     <main>
       <section class="startGame container">
-        <h1 class="startGame__h1--start roboto-bold">Quiz Time!</h1>
-        <p class="roboto-regular">
-          Test your knowledge with these fun questions
-        </p>
-        <button class="roboto-medium btn startGame__button">Start Quiz</button>
+        <h1 class="startGame__h1--start roboto-bold">وقت الاختبار!</h1>
+        <p class="roboto-regular">اختبر معرفتك في آيات الكتاب المقدس</p>
+        <button class="roboto-medium btn startGame__button">
+          ابدأ الاختبار
+        </button>
       </section>
       <section class="question container">
         <h1 class="question__h1--start roboto-semibold"></h1>
@@ -45,16 +44,16 @@
         />
       </section>
       <section class="resultGame container">
-        <h1 class="resultGame__h1--start roboto-bold">Quiz Results</h1>
+        <h1 class="resultGame__h1--start roboto-bold">نتائج الاختبار</h1>
         <div class="resultGame__resultsBox">
           <p class="roboto-medium resultBox__user-answers">
-            You answered 3 out of 5
+            أجبت عن 2 من أصل 5
           </p>
           <h2 class="roboto-semibold resultBox__user-score"></h2>
         </div>
 
         <button class="roboto-medium btn resultGame__button--startAgain">
-          Restart Quiz
+أعد المحاولة
         </button>
       </section>
     </main>
@@ -73,7 +72,6 @@
       src="assets/audio/finishSound.mp3"
       preload="auto"
     ></audio>
-
     <script src="js/master.js"></script>
   </body>
 </html>

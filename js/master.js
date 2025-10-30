@@ -90,9 +90,65 @@ async function fetchQuestions() {
     try {
         const response = await fetch("https://opentdb.com/api.php?amount=5&category=27&type=multiple");
         if (!response.ok) throw new Error("Failed to fetch questions");
-        const data = await response.json();
-        questionsGenerator = getQuestion(data.results);
-        questionsLength = data.results.length;
+        const data = [{
+            question: "فَخَلَقَ اللهُ الإِنسَانَ عَلَى صُورَتِهِ، عَلَى صُورَةِ اللهِ خَلَقَهُ، ___ (تكوين 1:27)",
+            correct_answer: "ذكراً وأنثى خَلَقَهُمَا",
+            difficulty: "صعب",
+            incorrect_answers: [
+                "ذكراً وأنثى كوَّنهما ليعمرا الأرض",
+                "وجعل لهما سلطاناً على كل حي",
+                "وأعطاهما نسلاً ليملأا الأرض"
+            ],
+            type: "multiple"
+        },
+        {
+            question: "فَقَالَ لآدَمَ: لأَنَّكَ سَمِعْتَ لِقَوْلِ امْرَأَتِكَ... ___؛ وَشَوْكًا وَحَسَكًا تُنْبِتُ لَكَ. (تكوين 3:17–18)",
+            correct_answer: "مَلْعُونَةٌ الأَرْضُ بِسَبَبِكَ",
+            difficulty: "صعب",
+            incorrect_answers: [
+                "مَنْعُونٌ أَنْتَ فِي كُلِّ عَمَلِكَ",
+                "مُعَاقَبَةٌ الأَرْضُ مِنْ أَجْلِكَ",
+                "سَأَجْعَلُ الأَرْضَ تُنْتِجُ عَنَاءً"
+            ],
+            type: "multiple"
+        },
+        {
+            question: "إِنْ أَحْسَنْتَ أَفَلاَ رَفْعٌ؟ وَإِنْ لَمْ تُحْسِنْ فَعِنْدَ الْبَابِ خَطِيَّةٌ رَابِضَةٌ... وَإِلَيْكَ اشْتِيَاقُهَا، وَأَنْتَ ___. (تكوين 4:7)",
+            correct_answer: "تَسُودُ عَلَيْهَا",
+            difficulty: "صعب",
+            incorrect_answers: [
+                "تُسْلِمُ لَهَا",
+                "تَتَغَلَّبُ عَلَى رَغْبَتِهَا",
+                "تَغْلِبُ الشَّرَّ بِالْخَيْرِ"
+            ],
+            type: "multiple"
+        },
+        {
+            question: "إِنْ أَرَادَ أَحَدٌ أَنْ يَأْتِيَ وَرَائِي، فَلْيُنْكِرْ نَفْسَهُ وَيَحْمِلْ صَلِيبَهُ ___. (لوقا 9:23)",
+            correct_answer: "كُلَّ يَوْمٍ",
+            difficulty: "صعب",
+            incorrect_answers: [
+                "فِي كُلِّ وَقْتٍ",
+                "مَرَّةً فِي الأُسْبُوعِ",
+                "عِنْدَ الضِّيقِ وَالتَّجْرِبَةِ"
+            ],
+            type: "multiple"
+        },
+        {
+            question: "وَلاَ تُشَاكِلُوا هذَا الدَّهْرَ، بَلِ تَغَيَّرُوا عَنْ شَكْلِكُمْ بِتَجْدِيدِ ___، لِتَمْتَحِنُوا مَا هُوَ إِرَادَةُ اللهِ الصَّالِحَةُ الْمَرْضِيَّةُ الْكَامِلَةُ. (رومية 12:2)",
+            correct_answer: "أَفْكَارِكُمْ",
+            difficulty: "صعب",
+            incorrect_answers: [
+                "أَرْوَاحِكُمْ",
+                "قُلُوبِكُمْ",
+                "نُفُوسِكُمْ"
+            ],
+            type: "multiple"
+        }
+        ];
+
+        questionsGenerator = getQuestion(data);
+        questionsLength = data.length;
         updateQuestion(questionsGenerator.next().value);
     } catch (error) {
         console.error("Error fetching questions:", error);
@@ -116,8 +172,8 @@ function shuffle(array) {
 
 function updateQuestion(question) {
     questionText.innerHTML = question.question;
-    questionsNumber.innerText = `Question ${quiz.questionNumber} of ${questionsLength}`;
-    questionScore.innerText = `Score: ${quiz.score}`;
+    questionsNumber.innerText = `سؤال ${quiz.questionNumber} من ${questionsLength}`;
+    questionScore.innerText = `${quiz.score} :النتيجة`;
     document.documentElement.style.setProperty('--bar-width', `${quiz.progressBar}` + "%");
 
     quiz.questionNumber++;
@@ -191,11 +247,13 @@ function answerEvent(question, e) {
 // Results Section
 function updateResults() {
     //update the user answers
-    userAnswers.innerText = `You answered ${quiz.score / 5} out of ${questionsLength}`
+    userAnswers.innerText = `أجبت عن ${quiz.score / 5} من أصل ${questionsLength}   
+`
 
 
     //update the biggestScore
-    userBiggestScore.innerText = `Your Score: ${quiz.score}`
+    userBiggestScore.innerText = `${quiz.score} :درجتك
+`
 
 }
 //Reset users answered questions and score
